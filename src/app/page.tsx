@@ -16,7 +16,9 @@ export default function OrientationLandingPage() {
             height={24} 
             className="text-blue-600"
           />
-          <span className="ml-2 text-lg font-bold text-yellow-600">Mastamaru 2025</span>
+         <span className="ml-2 text-lg font-bold text-yellow-600 hidden md:inline ">
+  Mastamaru 2025
+</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 text-black">
           <Link className="text-sm font-medium hover:text-yellow-600 transition-colors" href="#about">
@@ -121,12 +123,29 @@ export default function OrientationLandingPage() {
         {/* Schedule Section */}
         <section id="schedule" className="w-full py-12 md:py-24 lg:py-32 bg-blue-50">
           <div className="container mx-auto  px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-blue-900">Jadwal Kegiatan</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-600">Jadwal Kegiatan</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card className="bg-white">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Technical Meeting
+                  </CardTitle>
+                  <CardDescription className='text-blue-600'>
+                    <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
+                    Senin, 1 September 2024
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Upacara Pembukaan</li>
+                    <li>Pengenalan Kampus</li>
+                    <li>Sesi Interaktif</li>
+                  </ul>
+                </CardContent>
+              </Card>
               <Card className="bg-white">
                 <CardHeader>
                   <CardTitle className="text-blue-900">Hari 1: Pembukaan</CardTitle>
-                  <CardDescription>
+                  <CardDescription className='text-blue-600'>
                     <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
                     Senin, 1 September 2024
                   </CardDescription>
@@ -142,7 +161,7 @@ export default function OrientationLandingPage() {
               <Card className="bg-white">
                 <CardHeader>
                   <CardTitle className="text-blue-900">Hari 2: Akademik</CardTitle>
-                  <CardDescription>
+                  <CardDescription className='text-blue-600'>
                     <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
                     Selasa, 2 September 2024
                   </CardDescription>
@@ -158,7 +177,39 @@ export default function OrientationLandingPage() {
               <Card className="bg-white">
                 <CardHeader>
                   <CardTitle className="text-blue-900">Hari 3: Kegiatan Mahasiswa</CardTitle>
-                  <CardDescription>
+                  <CardDescription className='text-blue-600'>
+                    <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
+                    Rabu, 3 September 2024
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Pameran UKM</li>
+                    <li>Kompetisi Antar Kelompok</li>
+                    <li>Malam Keakraban</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-white">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Hari 3: Kegiatan Mahasiswa</CardTitle>
+                  <CardDescription className='text-blue-600'>
+                    <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
+                    Rabu, 3 September 2024
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Pameran UKM</li>
+                    <li>Kompetisi Antar Kelompok</li>
+                    <li>Malam Keakraban</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-white">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Hari 3: Kegiatan Mahasiswa</CardTitle>
+                  <CardDescription className='text-blue-600'>
                     <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
                     Rabu, 3 September 2024
                   </CardDescription>
@@ -178,7 +229,7 @@ export default function OrientationLandingPage() {
         {/* Gallery Section */}
         <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-blue-900">Galeri Kegiatan</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-yellow-600">Galeri Kegiatan</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <Image src="/images/bg-landing-page.png?height=300&width=400" alt="Orientation activity 1" width={400} height={300} className="rounded-lg object-cover w-full h-full" />
               <Image src="/images/bg-landing-page.png?height=300&width=400" alt="Orientation activity 2" width={400} height={300} className="rounded-lg object-cover w-full h-full" />
@@ -192,7 +243,7 @@ export default function OrientationLandingPage() {
         {/* Contact Section */}
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-blue-50">
           <div className="container mx-auto  px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-blue-900">Kontak</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-600">Kontak</h2>
             <p className="text-center text-gray-600 mb-6">Jika Anda memiliki pertanyaan lebih lanjut, hubungi kami melalui detail kontak di bawah ini.</p>
             <div className="text-center">
               <a href="mailto:info@mastamaru.com" className="text-blue-600 hover:text-blue-700">info@mastamaru.com</a>
