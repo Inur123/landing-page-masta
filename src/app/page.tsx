@@ -24,8 +24,8 @@ export default function OrientationLandingPage() {
           <Image
             src="/images/logo-masta24.png"
             alt="Logo Mastamaru"
-            width={24}
-            height={24}
+            width={50}
+            height={50}
             className="text-blue-600"
           />
           <span className="ml-2 text-lg font-bold text-yellow-600 hidden md:inline ">
