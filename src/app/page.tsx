@@ -12,7 +12,7 @@ import {
 import { CalendarDays, GraduationCap, Users, MapPin } from "lucide-react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
-import { MdOutlineClose } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 export default function OrientationLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ export default function OrientationLandingPage() {
         <div>
           <button className="block lg:hidden" onClick={toggleMenu}>
             {isMenuOpen ? (
-              <MdOutlineClose className="text-black w-10 h-10" />
+              <IoClose className="text-black w-10 h-10" />
             ) : (
               <RxHamburgerMenu className="text-black w-10 h-10" />
             )}
