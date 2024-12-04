@@ -20,7 +20,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Mastamaru 2025",
-  description: "Mastamaru 2025",
+  description: "Sistem Informasi Mastamaru 2025",
   icons: {
     icon: "/images/logo-masta24.png", 
   },

@@ -28,7 +28,7 @@ export default function OrientationLandingPage() {
             height={50}
             className="text-blue-600"
           />
-          <span className="ml-2 text-lg font-bold text-yellow-600 hidden md:inline ">
+          <span className="ml-2 text-lg font-bold text-yellow-500 hidden md:inline ">
             Mastamaru 2025
           </span>
         </Link>
@@ -49,25 +49,25 @@ export default function OrientationLandingPage() {
               }`}
             >
               <Link
-                className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                className="text-sm font-medium hover:text-yellow-500 transition-colors"
                 href="#about"
               >
                 Tentang
               </Link>
               <Link
-                className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                className="text-sm font-medium hover:text-yellow-500 transition-colors"
                 href="#schedule"
               >
                 Jadwal
               </Link>
               <Link
-                className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                className="text-sm font-medium hover:text-yellow-500 transition-colors"
                 href="#ukm"
               >
                 Ukm
               </Link>
               <Link
-                className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                className="text-sm font-medium hover:text-yellow-500 transition-colors"
                 href="#gallery"
               >
                 Galeri
@@ -112,7 +112,7 @@ export default function OrientationLandingPage() {
                   href="https://anisdawim.my.id"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-lg font-semibold text-white bg-yellow-600 rounded-lg hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
+                  className="px-4 py-2 text-lg font-semibold text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
                 >
                   Daftar
                 </a>
@@ -121,7 +121,7 @@ export default function OrientationLandingPage() {
                   href="https://anisdawim.my.id"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-lg font-semibold text-white bg-yellow-600 rounded-lg hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
+                  className="px-4 py-2 text-lg font-semibold text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
                 >
                   Panduan
                 </a>
@@ -133,7 +133,7 @@ export default function OrientationLandingPage() {
         {/* About Section */}
         <section id="about" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto  px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-600">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-500">
               Tentang Mastamaru
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl lg:text-base xl:text-xl dark:text-black text-center mb-8">
@@ -193,7 +193,7 @@ export default function OrientationLandingPage() {
           className="w-full py-12 md:py-24 lg:py-32 bg-blue-50"
         >
           <div className="container mx-auto  px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-600">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-500">
               Jadwal Kegiatan
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -313,7 +313,7 @@ export default function OrientationLandingPage() {
 
         <section id="ukm" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-2 text-yellow-600">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-2 text-yellow-500">
               UKM
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl text-center mb-5">
@@ -389,7 +389,7 @@ export default function OrientationLandingPage() {
         {/* Gallery Section */}
         <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-yellow-600">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-yellow-500">
               Galeri Kegiatan
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -444,7 +444,7 @@ export default function OrientationLandingPage() {
           className="w-full py-12 md:py-24 lg:py-32 bg-blue-50"
         >
           <div className="container mx-auto  px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-600">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-500">
               Kontak
             </h2>
             <p className="text-center text-gray-600 mb-6">
@@ -463,7 +463,7 @@ export default function OrientationLandingPage() {
         </section>
       </main>
 
-      <footer className="bg-yellow-600 text-white text-center py-4">
+      <footer className="bg-yellow-500 text-white text-center py-4">
         <p>&copy; 2024 Mastamaru. All rights reserved.</p>
       </footer>
     </div>
