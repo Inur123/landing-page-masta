@@ -98,7 +98,7 @@ export default function OrientationLandingPage() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-md">
-                  Selamat Datang di Masa Ta&apos;aruf Mahasiswa Baru 2024
+                  Selamat Datang di Masa Ta&apos;aruf Mahasiswa Baru 2025
                 </h1>
                 <p className="mx-auto max-w-[700px] text-white md:text-xl font-semibold drop-shadow">
                   Mulai perjalanan akademikmu dengan semangat dan kebersamaan.
