@@ -9,14 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  CalendarDays,
-  GraduationCap,
-  Users,
-  MapPin,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { CalendarDays, GraduationCap, Users, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
@@ -27,7 +20,7 @@ export default function OrientationLandingPage() {
   const [total, setTotal] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -124,6 +117,12 @@ export default function OrientationLandingPage() {
                 href="#contact"
               >
                 Kontak
+              </Link>
+              <Link
+                className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                href="#students"
+              >
+                Data Pendaftar
               </Link>
             </nav>
           </div>
@@ -463,7 +462,7 @@ export default function OrientationLandingPage() {
               Berikut adalah data mahasiswa yang terdaftar dalam kegiatan
               Mastamaru 2025.
             </p>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-end">
               <input
                 type="text"
                 placeholder="Cari mahasiswa..."
@@ -487,19 +486,11 @@ export default function OrientationLandingPage() {
                 <tbody>
                   {currentItems.map(
                     (
-                      item: {
-                        name: string;
-                        nim: string;
-                        fakultas: string;
-                        prodi: string;
-                        kelompok: string;
-                      },
+                      item,
                       index
                     ) => (
                       <tr key={index} className="hover:bg-gray-100 text-black">
-                        <td className="py-2 px-4 border-b">
-                          {indexOfFirstItem + index + 1}
-                        </td>
+                        <td className="py-2 px-4 border-b">{indexOfFirstItem + index + 1}</td>
                         <td className="py-2 px-4 border-b">{item.name}</td>
                         <td className="py-2 px-4 border-b">{item.nim}</td>
                         <td className="py-2 px-4 border-b">{item.fakultas}</td>
@@ -511,29 +502,30 @@ export default function OrientationLandingPage() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 flex justify-between items-center space-x-4">
-              <p className="text-lg font-semibold text-black">
+            <div className="mt-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p className="text-lg font-semibold text-black order-2 md:order-1">
                 Total Pendaftar Mastamaru : {filteredData.length}
               </p>
-              <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className="px-3 py-1 bg-blue-500 text-white rounded-md disabled:bg-gray-300"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <span className="text-sm text-black">
-                Page {currentPage} of {totalPages}
-              </span>
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="px-3 py-1 bg-blue-500 text-white rounded-md disabled:bg-gray-300"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
+              <div className="flex items-center gap-2 order-1 md:order-2">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1 bg-blue-500 text-white rounded-md disabled:bg-gray-300"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <span className="text-sm text-black">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="px-3 py-1 bg-blue-500 text-white rounded-md disabled:bg-gray-300"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
-            <div className="mt-4 text-right"></div>
           </div>
         </section>
 
@@ -568,3 +560,4 @@ export default function OrientationLandingPage() {
     </div>
   );
 }
+
