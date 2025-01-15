@@ -9,14 +9,61 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CalendarDays, GraduationCap, Users, MapPin } from "lucide-react";
+import {
+  CalendarDays,
+  GraduationCap,
+  Users,
+  MapPin,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 
 export default function OrientationLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [data, setData] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
+  const [searchQuery, setSearchQuery] = useState("");
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    // Fetch data from the API
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:8000/api/mahasiswa/total");
+      const result = await response.json();
+
+      if (result.status === "success") {
+        setData(result.latestMahasiswa);
+        setTotal(result.totalMahasiswa);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const filteredData = data.filter((item) =>
+    Object.values(item).some((value) =>
+      value.toString().toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  );
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-black">
       <header className="px-4 lg:px-6 h-16 flex items-center backdrop-blur-sm bg-white/30 sticky top-0 z-50 justify-between">
@@ -269,48 +316,11 @@ export default function OrientationLandingPage() {
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="bg-white">
-                <CardHeader>
-                  <CardTitle className="text-blue-900">
-                    Hari 3: Kegiatan Mahasiswa
-                  </CardTitle>
-                  <CardDescription className="text-blue-600">
-                    <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
-                    Rabu, 3 September 2024
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside text-gray-600">
-                    <li>Pameran UKM</li>
-                    <li>Kompetisi Antar Kelompok</li>
-                    <li>Malam Keakraban</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card className="bg-white">
-                <CardHeader>
-                  <CardTitle className="text-blue-900">
-                    Hari 3: Kegiatan Mahasiswa
-                  </CardTitle>
-                  <CardDescription className="text-blue-600">
-                    <CalendarDays className="h-4 w-4 inline-block mr-1 text-blue-600" />
-                    Rabu, 3 September 2024
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside text-gray-600">
-                    <li>Pameran UKM</li>
-                    <li>Kompetisi Antar Kelompok</li>
-                    <li>Malam Keakraban</li>
-                  </ul>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>
 
         {/* Partnership Section */}
-
         <section id="ukm" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-2 text-yellow-500">
@@ -386,6 +396,7 @@ export default function OrientationLandingPage() {
             </div>
           </div>
         </section>
+
         {/* Gallery Section */}
         <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
@@ -438,6 +449,94 @@ export default function OrientationLandingPage() {
             </div>
           </div>
         </section>
+
+        {/* Students Section */}
+        <section
+          id="students"
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-50"
+        >
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-yellow-500">
+              Data Mahasiswa
+            </h2>
+            <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl lg:text-base xl:text-xl dark:text-black text-center mb-8">
+              Berikut adalah data mahasiswa yang terdaftar dalam kegiatan
+              Mastamaru 2025.
+            </p>
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Cari mahasiswa..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-50 text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+              <table className="min-w-full table-auto">
+                <thead className="bg-blue-600 text-white">
+                  <tr>
+                    <th className="px-4 py-2 text-left">No</th>
+                    <th className="px-4 py-2 text-left">Nama</th>
+                    <th className="px-4 py-2 text-left">NIM</th>
+                    <th className="px-4 py-2 text-left">Fakultas</th>
+                    <th className="px-4 py-2 text-left">Prodi</th>
+                    <th className="px-4 py-2 text-left">Kelompok</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {currentItems.map(
+                    (
+                      item: {
+                        name: string;
+                        nim: string;
+                        fakultas: string;
+                        prodi: string;
+                        kelompok: string;
+                      },
+                      index
+                    ) => (
+                      <tr key={index} className="hover:bg-gray-100 text-black">
+                        <td className="py-2 px-4 border-b">
+                          {indexOfFirstItem + index + 1}
+                        </td>
+                        <td className="py-2 px-4 border-b">{item.name}</td>
+                        <td className="py-2 px-4 border-b">{item.nim}</td>
+                        <td className="py-2 px-4 border-b">{item.fakultas}</td>
+                        <td className="py-2 px-4 border-b">{item.prodi}</td>
+                        <td className="py-2 px-4 border-b">{item.kelompok}</td>
+                      </tr>
+                    )
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-4 flex justify-between items-center space-x-4">
+              <p className="text-lg font-semibold text-black">
+                Total Pendaftar Mastamaru : {filteredData.length}
+              </p>
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="px-3 py-1 bg-blue-500 text-white rounded-md disabled:bg-gray-300"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <span className="text-sm text-black">
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="px-3 py-1 bg-blue-500 text-white rounded-md disabled:bg-gray-300"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="mt-4 text-right"></div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section
           id="contact"
