@@ -17,7 +17,7 @@ import { IoClose } from "react-icons/io5";
 export default function OrientationLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [data, setData] = useState([]);
-  const [total, setTotal] = useState(0);
+ 
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
   const [searchQuery, setSearchQuery] = useState('');
@@ -32,7 +32,7 @@ export default function OrientationLandingPage() {
 
       if (result.status === "success") {
         setData(result.latestMahasiswa);
-        setTotal(result.totalMahasiswa);
+        
       }
     };
 
