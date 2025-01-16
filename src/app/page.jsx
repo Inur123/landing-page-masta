@@ -27,7 +27,7 @@ export default function OrientationLandingPage() {
   useEffect(() => {
     // Fetch data from the API
     const fetchData = async () => {
-      const response = await fetch("http://localhost:8000/api/mahasiswa/total");
+      const response = await fetch("https://masta.zainur.my.id/api/mahasiswa/total");
       const result = await response.json();
 
       if (result.status === "success") {
@@ -155,7 +155,7 @@ export default function OrientationLandingPage() {
               <div className="flex items-center space-x-4">
                 {/* Tombol Daftar */}
                 <a
-                  href="https://anisdawim.my.id"
+                  href="https://masta.zainur.my.id"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 text-lg font-semibold text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
@@ -164,7 +164,7 @@ export default function OrientationLandingPage() {
                 </a>
                 {/* Tombol Panduan */}
                 <a
-                  href="https://anisdawim.my.id"
+                  href="https://zainur.my.id"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 text-lg font-semibold text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
